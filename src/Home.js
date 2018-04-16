@@ -9,25 +9,16 @@ class Home extends React.Component {
     this.props.requestApiData();
   }
 
-  person = (x, i) =>
-    <div key={x.id.value}>
-      <h1>
-        {x.gender}
-      </h1>
-      <h1>
-        {x.name.first}
-      </h1>
-      <h1>
-        {x.name.last}
-      </h1>
-      <img src={x.picture.medium} />
+  book = (x, i) =>
+    <div key={x}>
+     
     </div>;
 
   render() {
     const { results = [] } = this.props.data;
     return results.length
       ? <h1>
-          {results.map(this.person)}
+          {results.map(this.book)}
         </h1>
       : <h1>loading...</h1>;
   }
@@ -38,4 +29,4 @@ const mapStateToProps = state => ({ data: state.data });
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ requestApiData }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);  
