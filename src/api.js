@@ -1,9 +1,11 @@
 export const fetchData = async () => {
   try {
-    const response = await fetch("https://www.booknomads.com/api/v0/isbn/9789000035526");
-    console.log(response);
+    //const response = await fetch("https://randomuser.me/api");
+   const response = await fetch("https://jsonplaceholder.typicode.com/posts/");
+   
+    //console.log(response);
     const data = await response.json();
-    console.log(data);
+   // console.log(data);
     return data;
   } catch (e) {
     console.log(e);
